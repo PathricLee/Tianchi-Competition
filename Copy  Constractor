@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+class B
+{
+  public:
+    B(){cout<<"Default constractor"<<endl;}
+    B(int i):data(i){cout<<"Constractor by parameter "<<data<<endl;}
+    B(B &b){cout<<"Copy Constrator is called!"<<endl;}
+    ~B(){cout<<"destractor is called."<<endl;}
+  private:
+    int data;
+};
+
+B play(B b)
+{
+  return b;
+}
+int main()
+{
+  B temp = play(5);
+  return 0;
+}
