@@ -1,0 +1,25 @@
+void swap(int &a, int &b)
+{
+  int temp = a;
+  a = b;
+  b = temp;
+}
+/**************************f表示数组首元素位置，l表示数组的len***************************************/
+void  permutation(int a[], int f, int l)
+{
+  if(f==l)
+  {
+    copy(list,list+m,ostream_iterator<int>(cout," "));
+    cout<<endl;
+    return;
+  }
+  else
+  {
+    for(int i=f;i<l;i++)
+    {
+      swap(a[f], a[i]);
+      permutation(a, f+1, l);
+      swap(a[f], a[i]);
+    }
+  }
+}
